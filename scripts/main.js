@@ -56,13 +56,5 @@ function startup() {
   var start = getStart(schedule);
   scheduler(schedule, start);
   scheduler(schedule2, getStart(schedule2));
-  //document.getElementById("name").innerHTML = schedule[getName()];
-  for (var i = 0; i < 7; i++) {
-    console.log(schedule[i]);
-  }
-  for (var i = 0; i < 7; i++) {
-    console.log(schedule2[i]);
-  }
+  document.getElementById("name").innerHTML = schedule[getName()];
 }
-
-startup();
