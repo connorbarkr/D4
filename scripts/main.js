@@ -15,33 +15,54 @@ var schedule = {
   6: "placeholder"
 }
 
-function getIndexByName(names, name) {
-  return Object.keys(object).find(key => object[key] === value);
+var schedule2 = {
+  0: "Connor Barker",
+  1: "Eric Chiang",
+  2: "Rob Farlow",
+  3: "Salmaan Khan",
+  4: "Connor Barker",
+  5: "Eric Chiang",
+  6: "Rob Farlow"
 }
 
-function getStart(schedule) {
-  if (schedule[0] == "placeholder") return 0; // if schedule is empty set start to 0
-  var start = getIndexByName(names, schedule[6]) + 1; //initialize the starting index to the next name in the list
+function getIndexByName(names, name) {
+  return Object.keys(names).find(key => names[key] === name);
+}
+
+function getStart(list) {
+  if (list[0] == "placeholder") return 0; // if schedule is empty set start to 0
+  var start = parseInt(getIndexByName(names, list[6])) + 1; //initialize the starting index to the next name in the list
   if (start > 3) start = 0; // ensure it stays in range
   return start;
 }
 
-function scheduler(schedule, start) {
+function scheduler(list, start) {
   var j = 0;
   for (var i = start; j < 7; i++) {
     if (i > 3) i = 0;
-    shedule[j] = names[i];
+    list[j] = names[i];
+    j++;
   }
-  j++;
 }
 
-function getName() {
+function getName(list) {
   var d = new Date();
-  name = schedule[d.getDay()];
+  console.log(d.getDay());
+  name = list[d.getDay()];
+  return name;
 }
 
 function startup() {
   var start = getStart(schedule);
   scheduler(schedule, start);
-  document.getElementById("name").innerHTML = schedule[getName()];
+  scheduler(schedule2, getStart(schedule2));
+  //document.getElementById("name").innerHTML = schedule[getName()];
+  for (var i = 0; i < 7; i++) {
+    console.log(schedule[i]);
+  }
+  for (var i = 0; i < 7; i++) {
+    console.log(schedule2[i]);
+  }
 }
+
+startup();
