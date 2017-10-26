@@ -15,16 +15,6 @@ var schedule = {
   6: "placeholder"
 }
 
-var schedule2 = {
-  0: "Connor Barker",
-  1: "Eric Chiang",
-  2: "Rob Farlow",
-  3: "Salmaan Khan",
-  4: "Connor Barker",
-  5: "Eric Chiang",
-  6: "Rob Farlow"
-}
-
 function getIndexByName(names, name) {
   return Object.keys(names).find(key => names[key] === name);
 }
@@ -47,7 +37,6 @@ function scheduler(list, start) {
 
 function getName(list) {
   var d = new Date();
-  console.log(d.getDay());
   name = list[d.getDay()];
   return name;
 }
@@ -55,6 +44,5 @@ function getName(list) {
 function startup() {
   var start = getStart(schedule);
   scheduler(schedule, start);
-  scheduler(schedule2, getStart(schedule2));
-  document.getElementById("name").innerHTML = schedule[getName()];
+  document.getElementById("name").innerHTML = schedule[getName(schedule)];
 }
