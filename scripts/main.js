@@ -44,5 +44,6 @@ function getName(list) {
 function startup() {
   var start = getStart(schedule);
   scheduler(schedule, start);
-  document.getElementById("name").innerHTML = schedule[getName(schedule)];
+  console.log(getName(schedule));
+  document.getElementById("name").innerHTML = getName(schedule);
 }
