@@ -4,8 +4,23 @@
     <meta charset="utf-8">
     <title>Do Da Darn Dishes</title>
     <script src="scripts/main.js"></script>
+    <script src="scripts/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDSUrCJxjb37BKpzYdeylBE0BcjN1Tz1Lw",
+        authDomain: "personal-site-a3b31.firebaseapp.com",
+        databaseURL: "https://personal-site-a3b31.firebaseio.com",
+        projectId: "personal-site-a3b31",
+        storageBucket: "",
+        messagingSenderId: "248736733881"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
-  <body onload="startup()">
+  <!-- <body onload="startup()">
     <h1 id="name">Placeholder</h1>
-  </body>
+  </body> -->
+  <img src="assets/hi_margaret.jpeg" alt="Hi, Margaret!">
 </html>
